@@ -1,0 +1,57 @@
+.parent
+{
+  background-color:blue;
+  
+  
+}
+
+.first
+{
+  background-color:green;
+  /*
+  position: relative;
+  left:20px;
+  */
+
+  
+  position: absolute;
+  top:10px;
+  
+
+  
+  
+}
+
+.second
+{
+background-color:red;
+
+}
+
+.third
+{
+background-color:yellow;
+}
+
+
+/*
+1.Static
+Elements  by default are static in nature.
+
+2.Relative
+relative takes the element  out of the  document flow but the other elements does not take its place.We can use properties like top,bottom,left,right with these except with static.
+relative will move the element if using the above property  relative to if  that element  would have been static.
+
+3.absolute
+In absolute postion  the element will completely come  out of the normal document flow and the other elements will take that place.If the parent of this element does not have any
+position property then on using  top,left,right.... will give  it position relative to the top parent which in our case the viewport we are looking on the screen.
+If the parent has some position property then it will be positioned relative to it.
+
+4.Fixed
+Fixed  is same as absolute if no top,bottoom..... are mentioned that is it takes the element completely out of the normal document flow and the space  is occupied by other elements.
+But if you are using top,bottom,left,right then it will be positioned relative to the viewport even if the parent is positioned.
+Most important thing that on scrolling they will be in that fixed position only.
+
+5.Sticky
+sticky is a combination of relative and fixed.Means first it will be positioned according to the relative and then if you scroll it
+that element will remain at  its positon provided  you use top,bottom .....otherwise it will not be fixed.
