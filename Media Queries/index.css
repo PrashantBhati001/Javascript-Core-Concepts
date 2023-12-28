@@ -1,0 +1,31 @@
+body {
+    color:red;
+}
+
+.title{
+    font-size: 6rem;
+}
+
+.subtitle{
+    font-size: 4rem;
+}
+
+/* Media query start with @media and then we mention what type of media we want  to apply the style which could be 
+screen or on print or on orientation */
+
+@media all and (max-width:500px)
+{
+   body{
+    color:yellow;
+   }
+}
+
+/* and here is working  similar to logic gates ,the css style will be applied only when all the conditions are true.
+or can be used using a comma(,) where the css style will be applied when any of the condition  is true.
+If you dont mention the type of media then by default it applies to all the media.
+
+One more important point to observe is that if the body would have been at the botton then in that case what ever media 
+query you are applying won't have any effect and the css written inside the body will be applied.
+
+*/
+
