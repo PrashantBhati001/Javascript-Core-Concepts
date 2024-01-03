@@ -201,3 +201,10 @@
 
 // // Here the hello world is printed immediately,at the first await the JS engine will wait for 5 sec and then will print the next
 // two set of lines and then once extra 5 sec are passed the second promise is resolved and  the next set of lines is printed
+
+
+
+//CORE CONCEPT
+// Whenever the JS engine sees await it will suspend the execution of that function until the promise is not resolved.If the
+// promise is already resolved then the fucntion will not be suspended.Once the suspended promise is resolved the JS engine will 
+// continue its execution from where it left
