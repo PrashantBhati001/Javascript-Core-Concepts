@@ -114,11 +114,90 @@
 // until the primise is not resloved so that the main thread is not blocked.
 
 
+//Consider the below cases---important
+// 1.
+// const p=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{resolve("Promise resolved after 10 secs")},10000)
+// })
+
+// async function getData()
+// {
+//     console.log("Hello World");
+//     const val1=await p;
+//     console.log("Namaste Javasript");
+//     console.log(val1);
+//     const val2=await p;
+//     console.log("Namaste javascript");
+//     console.log(val2)
+// }
+
+// getData()
+
+
+// Here the important point to note is that hello world will be printed immediately,and then the Js engine will wait for 10 sec 
+// for the promise to resolve,once it will resolve all the lines below it will be printed.Note that  the JS engine will not wait for 
+// the second await as it  is already resolved 
+
+
+
+// 2.
+
+// const p1=new Promise((resolve,reject)=>{
+//          setTimeout(()=>{resolve("Promise resolved after 10 secs")},10000)
+//  })
+
+//  const p2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{resolve("Promise resolved after 5 secs")},5000)
+// })
+
+
+// async function getData()
+// {
+//     console.log("Hello World");
+//     const val1=await p1;
+//     console.log("Namaste Javasript");
+//     console.log(val1);
+//     const val2=await p2;
+//     console.log("Namaste javascript");
+//     console.log(val2);
+// }
+
+// getData()
+
+
+// Here the hello world will be printed immediately.Then the JS engine will wait for 10 sec for P1 to resolve.By this time 
+// P2 would have already resolved but the JS engine will wait till the 10 sec expires.Once they are expired all the lines below
+// P1 will be printed.
+
+
+
+// 3.
+
+// const p1=new Promise((resolve,reject)=>{
+//          setTimeout(()=>{resolve("Promise resolved after 5 secs")},5000)
+//  })
+
+//  const p2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{resolve("Promise resolved after 10 secs")},10000)
+// })
+
+
+
+// async function getData()
+// {
+//     console.log("Hello World");
+//     const val1=await p1;
+//     console.log("Namaste Javasript");
+//     console.log(val1);
+//     const val2=await p2;
+//     console.log("Namaste javascript");
+//     console.log(val2);
+// }
+
+// getData()
 
 
 
 
-
-
-
-
+// // Here the hello world is printed immediately,at the first await the JS engine will wait for 5 sec and then will print the next
+// two set of lines and then once extra 5 sec are passed the second promise is resolved and  the next set of lines is printed
