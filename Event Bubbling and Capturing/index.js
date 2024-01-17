@@ -10,7 +10,8 @@ document.getElementById("GrandParent").addEventListener("click",()=>{console.log
 document.getElementById("Parent").addEventListener("click",()=>{console.log("Parent called")},false)
 document.getElementById("Child").addEventListener("click",()=>{console.log("Child called")},true)
 
-//The default behaviour is that first we down and event capturing is done and then we move upwards and  during this event 
+//The default behaviour is that first we go down and event capturing is done and then we move upwards and  during this event 
 // bubbling is done
 
 // e.stopPropagation is used to stop the propagation and is written inside the callback function
+//event capturing is also known as trickling
