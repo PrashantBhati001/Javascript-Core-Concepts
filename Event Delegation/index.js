@@ -11,10 +11,10 @@ document.getElementById("category").addEventListener("click",(e)=>{window.locati
 
 
 
-Advantages of Event Delegation
-1.Saves Memory
-2.less code 
+// Advantages of Event Delegation
+// 1.Saves Memory
+// 2.less code 
 
-Disadvantage
-1.Not all events are propagated or bubbled up.
-2.
+// Disadvantage
+// 1.Not all events are propagated or bubbled up.
+// 2.If at some place you have stopped the propagation then you have to ve careful at that place.
